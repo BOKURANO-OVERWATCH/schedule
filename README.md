@@ -15,7 +15,7 @@ bun install @bokurano/schedule
 ## Usage
 
 ```typescript
-import { Schedule } from "./Schedule";
+import { Schedule } from "@bokurano/schedule";
 
 const scheduler = new Schedule();
 
