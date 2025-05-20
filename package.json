@@ -12,8 +12,13 @@
     ],
     "description": "super lightweight/strict schedule runner",
     "repository": "BOKURANO-OVERWATCH/schedule",
-    "module": "src/index.ts",
     "type": "module",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/types/index.d.ts",
+    "files": [
+        "dist"
+    ],
     "private": false,
     "publishConfig": {
         "access": "public"
@@ -23,8 +28,9 @@
     },
     "devDependencies": {
         "@biomejs/biome": "2.0.0-beta.4",
+        "@bokurano/config": "^0.0.2",
         "@types/bun": "latest",
-        "@bokurano/config": "^0.0.2"
+        "bun-plugin-isolated-decl": "^0.2.4"
     },
     "peerDependencies": {
         "typescript": "^5"
@@ -32,6 +38,8 @@
     "packageManager": "bun@1.2.2+",
     "scripts": {
         "start": "bun src/index.ts",
-        "check": "biome check --write"
+        "check": "biome check --write",
+        "build": "bun scripts/builder.ts",
+        "publish": "bun run check && bun run build && bun publish"
     }
 }
