@@ -1,0 +1,9 @@
+{
+    "extends": "@bokurano/config/tsconfig",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    }
+}
